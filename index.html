@@ -1,266 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trending with MUNAAF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vip Kalyan Matka game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
+        .header {
+            background-color: #1a4388;
+            color: white;
+            text-align: center;
+            padding: 30px 20px 50px 20px;
+            position: relative;
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:40px 8%;
-position:relative;
-background:
-radial-gradient(circle at top right,#00ff9d20,transparent 35%),
-radial-gradient(circle at bottom left,#3b82f620,transparent 35%),
-#050816;
-}
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
 
-.hero::before{
-content:'';
-position:absolute;
-width:350px;
-height:350px;
-background:#00ff9d;
-filter:blur(180px);
-opacity:.15;
-top:-80px;
-right:-100px;
-}
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-.hero-content{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+        .sub-title {
+            font-size: 14px;
+            color: #d0dceb;
+            margin-bottom: 20px;
+        }
 
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-border-radius:50px;
-font-size:14px;
-color:#00ff9d;
-margin-bottom:25px;
-}
+        .description {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
 
-h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
-}
+        .btn-container {
+            padding: 0 20px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
 
-.highlight{
-background:linear-gradient(90deg,#00ff9d,#38bdf8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0, 136, 204, 0.4);
+            transition: 0.3s;
+        }
 
-.hero p{
-font-size:18px;
-line-height:1.8;
-color:#b5bfd1;
-margin-bottom:30px;
-}
+        .btn:hover {
+            background-color: #0077b3;
+        }
 
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+        .btn span {
+            margin-right: 8px;
+        }
 
-.btn{
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
+        .features {
+            padding: 30px 20px;
+        }
 
-.primary{
-background:linear-gradient(90deg,#00ff9d,#00d084);
-color:#000;
-}
+        .features h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+        }
 
-.secondary{
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.05);
-color:#fff;
-}
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #444;
+            padding: 12px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
 
-.btn:hover{
-transform:translateY(-4px);
-}
+        .feature-item:last-child {
+            border-bottom: none;
+        }
 
-.stats{
-display:flex;
-gap:30px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.stat h2{
-color:#00ff9d;
-font-size:32px;
-}
-
-.stat p{
-margin-top:5px;
-font-size:14px;
-color:#a5afc1;
-}
-
-.card{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,255,157,.08);
-}
-
-.card h3{
-margin-bottom:20px;
-color:#00ff9d;
-}
-
-.list{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.list div{
-padding:15px;
-background:rgba(255,255,255,.04);
-border-radius:12px;
-}
-
-.live{
-margin-top:25px;
-padding:18px;
-background:linear-gradient(90deg,#00ff9d20,#38bdf820);
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-@media(max-width:900px){
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.buttons{
-justify-content:center;
-}
-
-.stats{
-justify-content:center;
-}
-
-h1{
-font-size:42px;
-}
-}
-</style>
+        .icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <!-- अपनी इमेज का लिंक src में डालें -->
+            <img src="https://via.placeholder.com/90" alt="Logo" class="logo">
+            
+            <div class="title">Vip Kalyan Matka game</div>
+            <div class="sub-title">236k Members</div>
+            
+            <div class="description">
+                🚨 भारत का सबसे भरोसेमंद चैनल <br>
+                नीचे दिए गए बटन पर क्लिक करके जॉइन करें 💸
+            </div>
+        </div>
 
-<div class="hero-content">
+        <!-- Button Section -->
+        <div class="btn-container">
+            <!-- href में अपना टेलीग्राम चैनल लिंक डालें -->
+            <a href="https://raja567.online/" class="btn">
+                <span>📱</span> Join On Telegram
+            </a>
+        </div>
 
-<div>
+        <!-- Features Section -->
+        <div class="features">
+            <h3>Features :</h3>
 
-<div class="badge">
-🚀 India's Fast Growing Trading Community
-</div>
-
-<h1>
-Trade Smarter With
-<span class="highlight">MUNAAF</span>
-</h1>
-
-<p>
-Get daily stock market insights, trending stocks, breakout opportunities,
-swing trading ideas, intraday setups and risk management strategies
-from experienced traders.
-</p>
-
-<div class="buttons">
-<a href="https://t.me/+guLvlUgEjtNmZTQ1" class="btn primary">
-Join Telegram
-</a>
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>10K+</h2>
-<p>Active Traders</p>
-</div>
-
-<div class="stat">
-<h2>500+</h2>
-<p>Market Updates</p>
-</div>
-
-<div class="stat">
-<h2>95%</h2>
-<p>Community Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>📈 What You'll Get</h3>
-
-<div class="list">
-<div>🔥 Trending Stocks Daily</div>
-<div>📊 Technical Analysis</div>
-<div>💰 Swing Trading Ideas</div>
-<div>⚡ Intraday Setups</div>
-<div>🛡️ Risk Management</div>
-<div>🎯 Trading Psychology</div>
-</div>
-
-<div class="live">
-<b>LIVE MARKET EDGE</b><br>
-Daily actionable insights delivered directly to our community.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+            <div class="feature-item">
+                <span class="icon">📊</span> आज ही जॉइन करे और जीतो लाखों रुपए
+            </div>
+            <div class="feature-item">
+                <span class="icon">🔥</span> 24 घंटे अपडेट्स
+            </div>
+            <div class="feature-item">
+                <span class="icon">💯</span> 100% भरोसेमंद सेवा
+            </div>
+            <div class="feature-item">
+                <span class="icon">💡</span> 24×7 कस्टमर सपोर्ट
+            </div>
+        </div>
+    </div>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '28032855033001635');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=28032855033001635&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
