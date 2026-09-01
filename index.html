@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raja567 Matka Game</title>
+    <title>playboymeeting</title>
     <style>
         * {
             margin: 0;
@@ -12,199 +12,187 @@
             font-family: Arial, sans-serif;
         }
 
-        html, body {
-            width: 100%;
-            min-height: 100vh;
-            background-color: #f4f6f9;
-        }
-
         body {
+            background-color: #030708;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .container {
-            width: 100%;
             min-height: 100vh;
-            max-width: 480px;
-            background: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .header {
-            background-color: #1a4388;
-            color: white;
-            text-align: center;
-            padding: 40px 20px 40px 20px;
+            overflow-x: hidden;
             position: relative;
         }
 
-        .logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 15px;
-            margin-bottom: 15px;
+        /* Neon Border Container */
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #000000;
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 15px #00ffcc, inset 0 0 15px #00ffcc;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            margin: 10px;
+        }
+
+        /* Profile Image with Glowing Circle */
+        .profile-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 3px solid #00f0ff;
+            box-shadow: 0 0 20px #00f0ff;
+            overflow: hidden;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
+        /* Text Styling */
+        h2 {
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
-        .sub-title {
-            font-size: 14px;
-            color: #d0dceb;
-            margin-bottom: 15px;
+        .badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #ff007f;
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px #ff007f;
         }
 
-        .description {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        .btn-container {
-            padding: 0 20px;
-            margin-top: -25px;
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Join Button */
+        .join-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #b000ff, #00d4ff);
             color: white;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 15px;
-            font-size: 17px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 18px;
+            border-radius: 30px;
+            box-shadow: 0 0 15px #00d4ff;
+            margin-bottom: 25px;
             transition: 0.3s;
         }
 
-        .btn-download {
-            background-color: #0088cc;
-        }
-        .btn-download:hover {
-            background-color: #0077b3;
+        .join-btn:hover {
+            transform: scale(1.02);
         }
 
-        .btn-telegram {
-            background-color: #24A1DE;
-        }
-        .btn-telegram:hover {
-            background-color: #1b8fc7;
-        }
-
-        .btn span {
-            margin-right: 8px;
-        }
-
-        .features {
-            padding: 25px 20px;
-            flex-grow: 1;
-        }
-
-        .features h3 {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 12px;
+        /* Countdown Circle */
+        .timer-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid #00f0ff;
+            box-shadow: 0 0 15px #00f0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
-        .feature-item {
+        .auto-join-text {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #ff007f;
+            border-radius: 15px;
+            padding: 6px 12px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
             display: flex;
             align-items: center;
-            font-size: 15px;
-            color: #444;
-            padding: 10px 0;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .feature-item:last-child {
-            border-bottom: none;
-        }
-
-        .icon {
-            font-size: 18px;
-            margin-right: 12px;
+            justify-content: center;
+            gap: 8px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <img src="https://i.ibb.co/nMkJJ8W6/logo-2.png" alt="Logo" class="logo">
-            
-            <div class="title">Raja567 Matka Game</div>
-            <div class="sub-title">236k Members</div>
-            
-            <div class="description">
-                🚨 **भारत का सबसे भरोसेमंद मटका ऐप** <br>
-                नीचे दिए गए बटन से ऐप डाउनलोड करें 💸
-            </div>
+        <!-- Profile Image -->
+        <div class="profile-container">
+            <!-- Apni image ka URL yahan badlein -->
+            <img src="https://via.placeholder.com/150" alt="Profile">
         </div>
 
-        <!-- Double Button Section -->
-        <div class="btn-container">
-            <!-- Download Button 1 -->
-            <a href="https://raja567.online/app/rajav1.apk" class="btn btn-download" download>
-                <span>📱</span> DOWNLOAD APP
-            </a>
-            
-            <!-- Download Button 2 -->
-            <a href="https://raja567.online/app/rajav1.apk" class="btn btn-telegram" download>
-                <span>📱</span> DOWNLOAD APP
-            </a>
+        <h2>playboymeeting</h2>
+        <div class="badge">Real service 🔥</div>
+
+        <!-- Telegram Button (Apna link yahan dalein) -->
+        <a href="https://t.me/your_telegram_link" id="telegram-link" class="join-btn">JOIN TELEGRAM</a>
+
+        <!-- Countdown Timer -->
+        <div class="timer-circle" id="countdown">5</div>
+
+        <div class="auto-join-text">
+            Auto joining in <span id="auto-seconds">52</span> seconds...
         </div>
 
-        <!-- Features Section -->
-        <div class="features">
-            <h3>Features :</h3>
-
-            <div class="feature-item">
-                <span class="icon">📊</span> आज ही जॉइन करे और जीतो लाखों रुपए
-            </div>
-            <div class="feature-item">
-                <span class="icon">🔥</span> 24 घंटे अपडेट्स
-            </div>
-            <div class="feature-item">
-                <span class="icon">💯</span> 100% भरोसेमंद सेवा
-            </div>
-            <div class="feature-item">
-                <span class="icon">💡</span> 24×7 कस्टमर सपोर्ट
-            </div>
-        </div>
+        <!-- Buttons / Features List -->
+        <div class="info-box">💥</div>
+        <div class="info-box">🔥 Money RefunD</div>
+        <div class="info-box">⚡ 24/7 Support</div>
+        <div class="info-box">🚀</div>
     </div>
 
-    <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '28032855033001635');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=28032855033001635&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+        // Telegram Link Setup
+        const telegramURL = "https://t.me/your_telegram_link"; // Aapka Telegram Link
 
+        // Main Timer Logic (5 Seconds)
+        let count = 5;
+        const timerElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(() => {
+            count--;
+            if (count >= 0) {
+                timerElement.innerText = count;
+            } else {
+                clearInterval(countdownInterval);
+                window.location.href = telegramURL; // Timer end hote hi redirect
+            }
+        }, 1000);
+
+        // Auto Join Secondary Timer Logic (52 Seconds)
+        let autoCount = 52;
+        const autoSecondsElement = document.getElementById('auto-seconds');
+
+        setInterval(() => {
+            if (autoCount > 0) {
+                autoCount--;
+                autoSecondsElement.innerText = autoCount;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
