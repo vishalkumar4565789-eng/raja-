@@ -1,215 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙋𝙡𝙖𝙮𝙗𝙤𝙮 𝙟𝙤𝙗𝙨 𝙞𝙣𝙙𝙞𝙖</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>𝗕𝗔𝗗𝗦𝗛𝗔𝗛 𝗕𝗥𝗢𝗞𝗜𝗡𝗚 𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟™
+</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        body {
-            background-color: #030708;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+    body {
+      background-color: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
 
-        /* Neon Border Container */
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background: #000000;
-            border: 2px solid #00ffcc;
-            box-shadow: 0 0 15px #00ffcc, inset 0 0 15px #00ffcc;
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            margin: 10px;
-        }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      padding: 20px 16px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-        /* Profile Image with Glowing Circle */
-        .profile-container {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            border: 3px solid #00f0ff;
-            box-shadow: 0 0 20px #00f0ff;
-            overflow: hidden;
-        }
+    /* Header Profile */
+    .profile-img-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 12px;
+    }
 
-        .profile-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0066ff;
+    }
 
-        /* Text Styling */
-        h2 {
-            font-size: 22px;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+    .title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0d1b2a;
+      letter-spacing: 0.5px;
+    }
 
-        .badge {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid #ff007f;
-            color: #fff;
-            padding: 4px 15px;
-            border-radius: 12px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 8px #ff007f;
-        }
+    .subtitle {
+      color: #0066ff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
 
-        /* Join Button */
-        .join-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(90deg, #b000ff, #00d4ff);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 30px;
-            box-shadow: 0 0 15px #00d4ff;
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
+    .rating {
+      margin: 8px 0;
+      color: #ffb400;
+      font-size: 16px;
+    }
 
-        .join-btn:hover {
-            transform: scale(1.02);
-        }
+    .rating-text {
+      color: #555;
+      font-size: 12px;
+      font-weight: 500;
+    }
 
-        /* Countdown Circle */
-        .timer-circle {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 4px solid #00f0ff;
-            box-shadow: 0 0 15px #00f0ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 15px;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    /* Buttons */
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background-color: #0066ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 16px 0;
+      box-shadow: 0 4px 10px rgba(0, 102, 255, 0.25);
+    }
 
-        .auto-join-text {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #ff007f;
-            border-radius: 15px;
-            padding: 6px 12px;
-            font-size: 12px;
-            display: inline-block;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px #ff007f;
-        }
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
 
-        /* Info Boxes */
-        .info-box {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            padding: 12px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-    </style>
+    .stat-card {
+      background: #fdfdfd;
+      border: 1px solid #edf2f7;
+      border-radius: 10px;
+      padding: 12px 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .stat-number {
+      font-size: 18px;
+      font-weight: 800;
+      color: #000;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: #718096;
+      margin-top: 2px;
+    }
+
+    /* Banner / Main Section */
+    .heading-large {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0d1b2a;
+      margin-top: 10px;
+    }
+
+    .heading-large span {
+      color: #0066ff;
+    }
+
+    .sub-heading {
+      font-size: 13px;
+      color: #4a5568;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .sub-text {
+      font-size: 12px;
+      color: #718096;
+      margin: 6px 0 16px;
+    }
+
+    .alert-box {
+      background-color: #fff9e6;
+      border: 1px solid #ffeaa7;
+      color: #d63031;
+      padding: 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* Feature List */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 700;
+      color: #2d3748;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      font-size: 11px;
+      color: #a0aec0;
+      margin-top: 15px;
+      line-height: 1.4;
+    }
+
+    /* Powered by AI Ad Agency Branding Styles */
+    .agency-branding {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #718096;
+      font-weight: 500;
+      border-top: 1px dashed #edf2f7;
+      padding-top: 12px;
+    }
+
+    .agency-branding a {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .agency-branding a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Profile Image -->
-        <div class="profile-container">
-            <!-- Apni image ka URL yahan badlein -->
-            <img src="https://i.ibb.co/sd1rcf6H/Sj-FTVw-Q0dna-UWea-Ze-ZJQVZFj7m4-AH6-K3r7h9cqa-YO07b20-Fan-Kc-Np6m-Ido-B5tq-G12m-ZPh-Wa33-Vhu-Ty-Pa-W-1h.jpg" alt="Profile">
-        </div>
-
-        <h2>𝙋𝙡𝙖𝙮𝙗𝙤𝙮 𝙟𝙤𝙗𝙨 𝙞𝙣𝙙𝙞𝙖</h2>
-        <div class="badge">Real service 🔥</div>
-
-        <!-- Telegram Button (Apna link yahan dalein) -->
-        <a href="https://t.me/+EeH4eOmTc2YyODU1" id="telegram-link" class="join-btn">JOIN TELEGRAM</a>
-
-        <!-- Countdown Timer -->
-        <div class="timer-circle" id="countdown">5</div>
-
-        <div class="auto-join-text">
-            Auto joining in <span id="auto-seconds">52</span> seconds...
-        </div>
-
-        <!-- Buttons / Features List -->
-        <div class="info-box">💥</div>
-        <div class="info-box">🔥 Money RefunD</div>
-        <div class="info-box">⚡ 24/7 Support</div>
-        <div class="info-box">🚀</div>
+  <div class="container">
+    <!-- Header -->
+    <div class="profile-img-container">
+      <img src="https://i.ibb.co/bM5DXnfM/i-Mnq-Z7l-E7hkno4a-A6z-L6k-Jyh-Fhq1-IBftuu-VHKSy-B66kc-VZvgt9-BTJXYLlb-Mr-2-WYx-Qa-Ie-Aw-Or-Saw-jk-Gc-E.jpg" alt="Profile" class="profile-img">
+    </div>
+    <h1 class="title">PANKAJ BHARDWAJ OFFICIAL</h1>
+    <div class="subtitle">🏆 India's No.1 Stock Market Channel</div>
+    
+    <div class="rating">
+      ★★★★★
+      <span class="rating-text">4.9/5 (2,340 Reviews)</span>
     </div>
 
-    <script>
-        // Telegram Link Setup
-        const telegramURL = "https://t.me/+EeH4eOmTc2YyODU1"; // Aapka Telegram Link
+    <!-- CTA Button (Single) -->
+    <a href="https://t.me/+PGHxqlLGD0BjNzZl" class="btn-primary" onclick="fbq('track', 'Lead');" target="_blank">Join Free Telegram Channel &rarr;</a>
 
-        // Main Timer Logic (5 Seconds)
-        let count = 5;
-        const timerElement = document.getElementById('countdown');
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Accuracy</div>
+      </div>
+    </div>
 
-        const countdownInterval = setInterval(() => {
-            count--;
-            if (count >= 0) {
-                timerElement.innerText = count;
-            } else {
-                clearInterval(countdownInterval);
-                window.location.href = telegramURL; // Timer end hote hi redirect
-            }
-        }, 3000);
+    <!-- Offer Heading -->
+    <div class="heading-large">Get <span>FREE</span> Daily Calls</div>
+    <div class="sub-heading">for NIFTY, BANKNIFTY & SENSEX</div>
+    <div class="sub-text">Join thousands of traders getting daily market analysis</div>
 
-        // Auto Join Secondary Timer Logic (52 Seconds)
-        let autoCount = 52;
-        const autoSecondsElement = document.getElementById('auto-seconds');
+    <!-- Alert Banner -->
+    <div class="alert-box">
+      🔥 Limited FREE Access Available
+    </div>
 
-        setInterval(() => {
-            if (autoCount > 0) {
-                autoCount--;
-                autoSecondsElement.innerText = autoCount;
-            }
-        }, 3000);
-    </script>
+    <!-- Features -->
+    <div class="feature-list">
+      <div class="feature-item">
+        <span>📊</span> Daily Nifty & BankNifty Levels
+      </div>
+      <div class="feature-item">
+        <span>🎓</span> Educational Market Analysis
+      </div>
+      <div class="feature-item">
+        <span>👥</span> 50,000+ Subscribers Community
+      </div>
+    </div>
+
+    <!-- Footer Disclaimer -->
+    <p class="disclaimer">
+      <strong>Disclaimer:</strong> This channel is for educational purposes only. Trading involves market risk.
+    </p>
+
+    <!-- Powered by AI Ad Agency at the bottom linked to Telegram -->
+    <div class="agency-branding">
+      Powered by <a href="https://t.me/+jViKIQmWTLFmNjNl" onclick="fbq('track', 'Lead');" target="_blank">AI Ad Agency</a>
+    </div>
+  </div>
+
 </body>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '28492310433735140');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=28492310433735140&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </html>
